@@ -30,5 +30,5 @@ function removeIsland(grid, x, y) {
   if (y < grid[0].length - 1 && grid[x][y+1] === '1') removeIsland(grid, x, y + 1);
 }
 
-// Time comp: O(n*m) -- Not really sure about this one
-// Space comp: O(n*m) -- Not really sure about this one either
+// Time comp: O(n*m) -- n and m being the height and the width of the matrix
+// Space comp: O(n*m) -- n and m being the height and the width of the matrix
