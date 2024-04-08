@@ -14,5 +14,11 @@ function rotLeft(a, d) {
   return arr;
 }
 
+
+arr = [1,2,3,4,5,6,7,8,9];
+d = 3;
+
+console.log(rotLeft(arr, d));
+
 // Time comp: O(n);
 // Space comp: O(n); Would be O(1) space with in-place swapping
