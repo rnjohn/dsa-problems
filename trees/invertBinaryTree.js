@@ -27,3 +27,37 @@ root.right.left = new TreeNode(6); root.right.right = new TreeNode(9)
     This algorithm has a time complexity of O(n) since we go through every node of the tree.
     This algorithm has a space complexity of O(m), m being the number of levels of the tree since that is the deepest level the call stack will go.
 */
+
+
+
+// This can also be done using BFS or DFS
+
+// DFS
+function invertTreeDFS(root) {
+    const stack = [root];
+  
+    while (stack.length) {
+      const n = stack.pop();
+      if (n != null) {
+        [n.left, n.right] = [n.right, n.left];
+        stack.push(n.left, n.right);
+      }
+    }
+  
+    return root;
+  }
+  
+  // BFS
+  function invertTreeBFS(root) {
+    const queue = [root];
+  
+    while (queue.length) {
+      const n = queue.shift();
+      if (n != null) {
+        [n.left, n.right] = [n.right, n.left];
+        queue.push(n.left, n.right);
+      }
+    }
+  
+    return root;
+  }
