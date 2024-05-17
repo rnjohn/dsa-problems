@@ -17,13 +17,13 @@ var isAnagram = function(s, t) {
       if (dict1.has(s[i])) {
           dict1.set(s[i], dict1.get(s[i]) + 1);
       } else {
-          dict1.set(s[i], 0);
+          dict1.set(s[i], 1);
       }
 
       if (dict2.has(t[i])) {
           dict2.set(t[i], dict2.get(t[i]) + 1);
       } else {
-          dict2.set(t[i], 0);
+          dict2.set(t[i], 1);
       }
   }
 
@@ -39,3 +39,6 @@ var isAnagram = function(s, t) {
 s = 'anagram'
 t = 'nagaram'
 console.log(isAnagram(s, t));
+
+// This solution has a time complexity of O(n), being n the length of any of the two strings
+// This solution has a space complexity of O(n) in the worst case (if there are no repeated chars in any of the strings)
