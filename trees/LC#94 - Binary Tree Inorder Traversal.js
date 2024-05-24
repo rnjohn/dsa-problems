@@ -26,3 +26,26 @@ function helper(root, arr) {
 
 // This solution is using recursion, and has a time complexity of O(n) since it goes through every node of the tree.
 // This solution has a space complexity of O(n), n being the deepest level of the tree.
+
+// This can also be solved iteratively, using a stack:
+
+var inorderTraversalIterative = function(root) {
+  let stack = [];
+  let res = [];
+
+  while (root || stack.length > 0) {
+     if (root) {
+      stack.push(root)
+      root = root.left;
+     } else {
+      root = stack.pop();
+      res.push(root.val);
+      root = root.right;
+     }
+  }
+
+  return res;
+};
+
+// This solution has a time complexity of O(n), n being the amount of nodes the tree has
+// This solution has a space complexity of O(n), n being the deepest level of the tree
